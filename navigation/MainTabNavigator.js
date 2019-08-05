@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import WorkshopScreen from '../screens/Workshops';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -34,6 +35,29 @@ HomeStack.navigationOptions = {
 };
 
 HomeStack.path = '';
+
+const Workshops = createStackNavigator(
+  {
+    Workshops: WorkshopScreen,
+  },
+  config
+);
+
+Workshops.navigationOptions = {
+  tabBarLabel: 'Workshops',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-heart${focused ? '' : '-outline'}`
+          : 'md-heart'
+      }
+    />
+  )
+};
+
+Workshops.path = '';
 
 const LinksStack = createStackNavigator(
   {
@@ -68,6 +92,7 @@ SettingsStack.navigationOptions = {
 SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
+  Workshops,
   HomeStack,
   LinksStack,
   SettingsStack,
