@@ -34,7 +34,6 @@ export default function WorkshopScreen() {
           [Insert Description]
         </Text>
         <Button
-          icon={<Icon name='md-navigate' type='ionicon' color='#ffffff'/>}
           backgroundColor='#03A9F4'
           buttonStyle={{
             borderRadius: 0,
