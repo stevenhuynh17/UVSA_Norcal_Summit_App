@@ -22,13 +22,19 @@ export default function WorkshopScreen() {
   return (
     <ScrollView>
       <Card
-        title='HELLO WORLD'
+        title='Workshop'
         image={require('../assets/images/robot-dev.png')}>
         <Text style={{marginBottom: 10}}>
-          The idea with React Native Elements
+          [Insert Time]
+        </Text>
+        <Text style={{marginBottom: 10}}>
+          [Insert Location]
+        </Text>
+        <Text style={{marginBottom: 10}}>
+          [Insert Description]
         </Text>
         <Button
-          icon={<Icon name='code' color='#ffffff'/>}
+          icon={<Icon name='md-navigate' type='ionicon' color='#ffffff'/>}
           backgroundColor='#03A9F4'
           buttonStyle={{
             borderRadius: 0,
@@ -36,41 +42,7 @@ export default function WorkshopScreen() {
             marginRight: 0,
             marginBottom: 0
           }}
-          title='VIEW NOW' />
-      </Card>
-      <Card
-        title='HELLO WORLD'
-        image={require('../assets/images/robot-dev.png')}>
-        <Text style={{marginBottom: 10}}>
-          The idea with React Native Elements
-        </Text>
-        <Button
-          icon={<Icon name='code' color='#ffffff'/>}
-          backgroundColor='#03A9F4'
-          buttonStyle={{
-            borderRadius: 0,
-            marginLeft: 0,
-            marginRight: 0,
-            marginBottom: 0
-          }}
-          title='VIEW NOW' />
-      </Card>
-      <Card
-        title='HELLO WORLD'
-        image={require('../assets/images/robot-dev.png')}>
-        <Text style={{marginBottom: 10}}>
-          The idea with React Native Elements
-        </Text>
-        <Button
-          icon={<Icon name='code' color='#ffffff'/>}
-          backgroundColor='#03A9F4'
-          buttonStyle={{
-            borderRadius: 0,
-            marginLeft: 0,
-            marginRight: 0,
-            marginBottom: 0
-          }}
-          title='VIEW NOW' />
+          title=' Map' />
       </Card>
     </ScrollView>
   )
