@@ -18,35 +18,44 @@ import {
 
 import { MonoText } from '../components/StyledText';
 
-export default function WorkshopScreen() {
-  return (
-    <ScrollView>
-      <Card
-        title='Workshop'
-        image={require('../assets/images/robot-dev.png')}>
-        <Text style={{marginBottom: 10}}>
-          [Insert Time]
-        </Text>
-        <Text style={{marginBottom: 10}}>
-          [Insert Location]
-        </Text>
-        <Text style={{marginBottom: 10}}>
-          [Insert Description]
-        </Text>
-        <Button
-          backgroundColor='#03A9F4'
-          buttonStyle={{
-            borderRadius: 0,
-            marginLeft: 0,
-            marginRight: 0,
-            marginBottom: 0
-          }}
-          title=' Map' />
-      </Card>
-    </ScrollView>
-  )
+class WorkshopScreen extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('other', navigation.state.routeName),
+    };
+  };
+  
+  render(){
+    return (
+      <ScrollView>
+        <Card
+          title='Workshop'
+          image={require('../assets/images/robot-dev.png')}>
+          <Text style={{marginBottom: 10}}>
+            [Insert Time]
+          </Text>
+          <Text style={{marginBottom: 10}}>
+            [Insert Location]
+          </Text>
+          <Text style={{marginBottom: 10}}>
+            [Insert Description]
+          </Text>
+          <Button
+            backgroundColor='#03A9F4'
+            buttonStyle={{
+              borderRadius: 0,
+              marginLeft: 0,
+              marginRight: 0,
+              marginBottom: 0
+            }}
+            title=' Map' />
+        </Card>
+      </ScrollView>
+    )
+  }
 }
 
+export default WorkshopScreen;
 
 const styles = StyleSheet.create({
   container: {

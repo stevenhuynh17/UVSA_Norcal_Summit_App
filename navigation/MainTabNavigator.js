@@ -66,6 +66,7 @@ const Agenda = createStackNavigator(
 )
 
 Agenda.navigationOptions = {
+  header: null,
   tabBarLabel: 'Agenda',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
