@@ -5,7 +5,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import WorkshopScreen from '../screens/Workshops';
 import AgendaScreen from '../screens/AgendaScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import FamilyScreen from '../screens/FamilyScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -35,15 +35,15 @@ Workshops.navigationOptions = {
 
 Workshops.path = '';
 
-const Profile = createStackNavigator(
+const Family = createStackNavigator(
   {
-    Profile: ProfileScreen,
+    Family: FamilyScreen,
   },
   config
 );
 
-Profile.navigationOptions = {
-  tabBarLabel: 'Profile',
+Family.navigationOptions = {
+  tabBarLabel: 'Family',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -56,7 +56,7 @@ Profile.navigationOptions = {
   )
 };
 
-Profile.path = '';
+Family.path = '';
 
 const Agenda = createStackNavigator(
   {
@@ -84,7 +84,7 @@ Agenda.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   Workshops,
-  Profile,
+  Family,
   Agenda
 },
 {
