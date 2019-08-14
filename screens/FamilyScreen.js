@@ -2,10 +2,12 @@ import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import {
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
 import {
-  ListItem
+  ListItem,
+  Image
 } from 'react-native-elements';
 
 import { MonoText } from '../components/StyledText';
@@ -25,20 +27,57 @@ class FamilyScreen extends React.Component {
         avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
         subtitle: 'Vice Chairman'
       },
+      {
+        name: 'brynn',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+      },
+      {
+        name: 'Amy Farha',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+        subtitle: 'Vice President'
+      },
+      {
+        name: 'Chris Jackson',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+        subtitle: 'Vice Chairman'
+      },
+      {
+        name: 'brynn',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+      },
+      {
+        name: 'Amy Farha',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+        subtitle: 'Vice President'
+      },
+      {
+        name: 'Chris Jackson',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+        subtitle: 'Vice Chairman'
+      },
+      {
+        name: 'brynn',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+      }
     ]
 
     return(
       <View>
-        {
-          list.map((person, index) => (
-            <ListItem
-              key={index}
-              leftAvatar={{ source: {uri: person.avatar_url}}}
-              title={person.name}
-              subtitle={person.subtitle}
-            />
-          ))
-        }
+        <ScrollView>
+          {
+            list.map((person, index) => (
+              <Image
+                key={index}
+                source={{uri: person.avatar_url}}
+                style={{
+                  width: 200,
+                  height: 200,
+                  borderRadius: 200/2
+                }}
+              />
+            ))
+          }
+        </ScrollView>
       </View>
     )
   }
