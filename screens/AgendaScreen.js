@@ -16,6 +16,7 @@ import {
   Button,
   Icon
 } from 'react-native-elements';
+import * as firebase from 'firebase';
 
 import { MonoText } from '../components/StyledText';
 
@@ -26,7 +27,16 @@ class AgendaScreen extends React.Component {
     };
   };
 
+
+
   render() {
+
+    const database = firebase.database();
+    const test = database.ref().once("value")
+      .then((snapshot) => {
+        console.log(snapshot);
+      })
+
     return(
       <View>
       <ScrollView>
