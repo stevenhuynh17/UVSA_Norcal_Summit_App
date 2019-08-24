@@ -14,6 +14,7 @@ import {
   Input,
   Button
 } from 'react-native-elements';
+import * as firebase from 'firebase';
 
 import { MonoText } from '../components/StyledText';
 
