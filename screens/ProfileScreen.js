@@ -7,7 +7,8 @@ import {
   Text,
   TouchableOpacity,
   View,
-  AsyncStorage
+  AsyncStorage,
+  Alert
 } from 'react-native';
 import {
   Image,
@@ -21,7 +22,7 @@ import { MonoText } from '../components/StyledText';
 
 class ProfileScreen extends React.Component {
   _signInAsync = async () => {
-    await AsyncStorage.setItem('userToken', 'abc');
+
     this.props.navigation.navigate('Main');
   }
 
