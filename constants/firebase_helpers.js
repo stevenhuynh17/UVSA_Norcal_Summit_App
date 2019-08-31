@@ -13,9 +13,7 @@ export default {
     console.log(errorCode);
     console.log(errorMessage);
 
-    if(errorCode === "auth/wrong-password") {
-      Alert.alert("Invalid Password");
-    } else {
+    else {
       this.props.navigation.navigate('Main');
     }
 

@@ -21,9 +21,24 @@ import { MonoText } from '../components/StyledText';
 
 
 class ProfileScreen extends React.Component {
-  _signInAsync = async () => {
+  _signInAsync = () => {
+    firebase.auth().signInWithEmailAndPassword("steven.huynh@stanford.edu","1234").catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
 
-    this.props.navigation.navigate('Main');
+      console.log(errorCode);
+      console.log(errorMessage);
+
+
+      if(errorCode === "auth/wrong-password") {
+        Alert.alert("Invalid Password");
+        this.props.navigation.navigate('Main');
+      } else {
+        console.log("STEVEN HUYNH");
+
+      }
+
+    })
   }
 
   render() {
