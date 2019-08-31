@@ -10,3 +10,4 @@ web-build/
 web-report/
 constants/ApiKeys.js
 mockSchema.js
+data
