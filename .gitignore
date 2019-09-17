@@ -1,3 +1,4 @@
+data_file.json
 node_modules/**/*
 .expo/*
 npm-debug.*

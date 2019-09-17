@@ -14,11 +14,9 @@ with open('data/attendees/captainCrunch.csv') as csv_file:
     "Emergency Contact Phone Number",
     "Emergency Contact Relationship to You"]
 
-    data = {
+    data_structure = {
         "attendees": {}
     }
-    # data["name"] = "STEVEN"
-    print(data)
 
     def extractHeaders(data):
         headers = list(data.keys())
@@ -37,12 +35,16 @@ with open('data/attendees/captainCrunch.csv') as csv_file:
     for row in csv_reader:
         if line_count == 0:
             focus_questions = extractHeaders(row)
-            for header in focus_questions:
-                print(row[header])
             line_count += 1
+        # for header in focus_questions:
+        #     data["attendees"]["steven"] = 5
+        student = {}
+        for data in row:
+            student[data] = row[data]
+            data_structure["attendees"][row["Phone Number"]] = student
 
 
 
 
     with open("data_file.json", "w") as write_file:
-        write_file.write(json.dumps(data, indent=4))
+        write_file.write(json.dumps(data_structure, indent=4))
