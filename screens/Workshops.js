@@ -16,6 +16,8 @@ import {
   Icon
 } from 'react-native-elements';
 
+import database from '../data_file.json';
+
 import { MonoText } from '../components/StyledText';
 
 class WorkshopScreen extends React.Component {
@@ -24,21 +26,23 @@ class WorkshopScreen extends React.Component {
       title: navigation.getParam('other', navigation.state.routeName),
     };
   };
-  
+
   render(){
+    const {title, time, host, location} = database.workshops.A
+
     return (
       <ScrollView>
         <Card
-          title='Workshop'
+          title={title}
           image={require('../assets/images/robot-dev.png')}>
           <Text style={{marginBottom: 10}}>
-            [Insert Time]
+            {time}
           </Text>
           <Text style={{marginBottom: 10}}>
-            [Insert Location]
+            {location}
           </Text>
           <Text style={{marginBottom: 10}}>
-            [Insert Description]
+            {host}
           </Text>
           <Button
             backgroundColor='#03A9F4'
