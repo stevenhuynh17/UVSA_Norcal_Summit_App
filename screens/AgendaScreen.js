@@ -17,6 +17,7 @@ import {
   Icon
 } from 'react-native-elements';
 import * as firebase from 'firebase';
+import database from '../data_file.json';
 
 import { MonoText } from '../components/StyledText';
 
@@ -27,15 +28,9 @@ class AgendaScreen extends React.Component {
     };
   };
 
-
-
   render() {
-
-    const database = firebase.database();
-    const test = database.ref().once("value")
-      .then((snapshot) => {
-        console.log(snapshot);
-      })
+    // const database = firebase.database();
+    const { title, location, time, description } = database.agenda.Saturday[0]
 
     return(
       <View>
@@ -46,21 +41,21 @@ class AgendaScreen extends React.Component {
               <Text style={{
                   marginTop: 16,
                   marginLeft: 16
-                }}>[Insert Event Title]</Text>
+                }}>{title}</Text>
               <Text style={{
                   marginBottom: 16,
                   marginLeft: 16
-                }}>[Insert Event time]</Text>
+                }}>{time}</Text>
             </View>
           }
           image={require('../assets/images/robot-dev.png')}
           imageStyle={{height:192}}
         >
           <Text style={{marginBottom: 10}}>
-            [Insert Location]
+            {location}
           </Text>
           <Text style={{marginBottom: 10}}>
-            [Insert Description]
+            {description}
           </Text>
           <Button
             icon={<Icon name='md-navigate' type='ionicon' color='#ffffff'/>}
