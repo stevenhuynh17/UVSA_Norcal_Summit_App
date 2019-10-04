@@ -21,25 +21,35 @@ import { MonoText } from '../components/StyledText';
 
 
 class ProfileScreen extends React.Component {
+  state = {
+    verified: true
+  }
+
   _signInAsync = () => {
-    firebase.auth().signInWithEmailAndPassword("steven.huynh@stanford.edu","1234").catch((error) => {
+    firebase.auth().signInWithEmailAndPassword("steven.huynh@stanford.edu","123456").catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
 
       console.log(errorCode);
       console.log(errorMessage);
-
-
+      this.setState({
+        verified: false
+      })
       if(errorCode === "auth/wrong-password") {
         Alert.alert("Invalid Password");
-        this.props.navigation.navigate('Main');
-      } else {
-        console.log("STEVEN HUYNH");
 
+      } else if(errorCode == "auth/user-not-found"){
+        Alert.alert("Please contact coordinators about the situation")
+      }
+    }).then((test) => {
+      console.log(this.state.verified)
+      if(this.state.verified === true) {
+          this.props.navigation.navigate('Main');
       }
 
     })
   }
+
 
   render() {
     return(
@@ -49,7 +59,7 @@ class ProfileScreen extends React.Component {
           style={{width: 200, height: 200, marginHorizontal: 100, marginTop: 20, marginBottom: 48}}
           />
         <Input inputContainerStyle={{marginHorizontal: 40, marginBottom: 30}}
-          placeholder='Full Name'
+          placeholder='Email'
         />
       <Input inputContainerStyle={{marginHorizontal: 40, marginBottom: 33}}
           placeholder='Access Code'

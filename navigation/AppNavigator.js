@@ -14,6 +14,6 @@ export default createAppContainer(
     Auth: AuthMode
   },
   {
-    initialRouteName: 'AuthLoading'
+    initialRouteName: 'Auth'
   })
 );

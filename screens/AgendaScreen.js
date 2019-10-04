@@ -17,6 +17,7 @@ import {
   Icon
 } from 'react-native-elements';
 import * as firebase from 'firebase';
+
 import database from '../data_file.json';
 
 import { MonoText } from '../components/StyledText';
