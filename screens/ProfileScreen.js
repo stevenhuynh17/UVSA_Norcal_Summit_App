@@ -32,6 +32,7 @@ class ProfileScreen extends React.Component {
 
       console.log(errorCode);
       console.log(errorMessage);
+
       this.setState({
         verified: false
       })
@@ -41,8 +42,7 @@ class ProfileScreen extends React.Component {
       } else if(errorCode == "auth/user-not-found"){
         Alert.alert("Please contact coordinators about the situation")
       }
-    }).then((test) => {
-      console.log(this.state.verified)
+    }).then(() => {
       if(this.state.verified === true) {
           this.props.navigation.navigate('Main');
       }

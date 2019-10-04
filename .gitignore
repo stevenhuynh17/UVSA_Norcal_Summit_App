@@ -10,5 +10,7 @@ npm-debug.*
 web-build/
 web-report/
 constants/ApiKeys.js
+constants/Credentials.js
+constants/GOOGLE_APPLICATION_CREDENTIALS.json
 mockSchema.js
 data
